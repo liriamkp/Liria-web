@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liria Company</title>
+
+<style>
+body { margin:0; font-family:'Helvetica Neue', Arial; background:#ffffff; }
+
+.hero {
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero img { width:220px; margin-bottom:20px; }
+.hero h1 { font-size:2em; letter-spacing:3px; }
+.hero p { color:#777; }
+
+.btn-enter {
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:black;
+color:white;
+cursor:pointer;
+}
+
+.main { display:none; }
+
+header { text-align:center; padding:20px; border-bottom:1px solid #eee; }
+header img { width:120px; }
+
+.info { text-align:center; padding:20px; color:#555; }
+
+.search-container { text-align:center; margin:20px; }
+input { padding:12px; width:60%; border-radius:30px; border:1px solid #ddd; }
+
+.products {
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:30px;
+}
+
+.product {
+background:white;
+padding:15px;
+border-radius:15px;
+text-align:center;
+border:1px solid #eee;
+transition:0.3s;
+}
+
+.product:hover {
+transform:translateY(-5px);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product img {
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.btn {
+background:black;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.qr-section {
+text-align:center;
+margin:40px;
+}
+
+footer {
+text-align:center;
+padding:20px;
+background:#fafafa;
+color:#999;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+<img src="logo.png">
+<h1>LIRIA</h1>
+<p>Define tu estilo, completa tu brillo</p>
+<button class="btn-enter" onclick="entrar()">Entrar a la tienda</button>
+</div>
+
+<div class="main" id="mainContent">
+
+<header>
+<img src="logo.png">
+</header>
+
+<div class="info">
+<p>Productos certificados dermatológicamente 🧴</p>
+<p>Libres de maltrato animal 🐰</p>
+<p>Precios accesibles 💖</p>
+<p>Calidad y estilo en cada producto ✨</p>
+</div>
+
+<div class="search-container">
+<input type="text" id="search" placeholder="Buscar productos..." onkeyup="buscarProducto()">
+</div>
+
+<section class="products">
+
+<div class="product"><img src="enchinadores.png"><h3>Enchinadores + cepillo</h3><p>$15</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="rizador.png"><h3>Rizador de pestañas</h3><p>$35</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="Parches.png"><h3>Parches de estrellas</h3><p>$15</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="polvo.png"><h3>Polvo Vogue</h3><p>$30</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="mascarilla.png"><h3>Mascarilla nariz</h3><p>$10</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="labiales.png"><h3>Labiales Vogue</h3><p>$25</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="crema.png"><h3>Crema para manos</h3><p>$10</p><button class="btn">Comprar</button></div>
+
+<div class="product"><img src="saniye_paleta.png"><h3>Paleta de sombras Saniye</h3><p>$45</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="sweet_labial.png"><h3>Sweet labial Saniye</h3><p>$25</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="gloss_romantic.png"><h3>Gloss Romantic</h3><p>$16</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="delineador_saniye.png"><h3>Delineador Saniye</h3><p>$16</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="corrector.png"><h3>Corrector en crema</h3><p>$35</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="iluminador.png"><h3>Iluminador en polvo</h3><p>$35</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="cepillo.png"><h3>Cepillo con espejo</h3><p>$25</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="fat_oil.png"><h3>Gloss Fat Oil</h3><p>$25</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="gel_cejas.png"><h3>Gel para cejas</h3><p>$15</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="labial_barra.png"><h3>Labial en barra</h3><p>$20</p><button class="btn">Comprar</button></div>
+<div class="product"><img src="delineador_peniel.png"><h3>Delineador Peniel</h3><p>$20</p><button class="btn">Comprar</button></div>
+
+</section>
+
+<div class="qr-section">
+<h2>✨ ¡Conéctate con nosotros! ✨</h2>
+<p>Escanéame o da click 👇</p>
+<img src="qr.png" style="width:180px; border-radius:15px;">
+<br><br>
+<button class="btn" onclick="irInstagram()">Dame click</button>
+</div>
+
+<footer>
+<p>© 2026 Liria Company</p>
+</footer>
+
+</div>
+
+<script>
+function entrar(){
+document.querySelector('.hero').style.display='none';
+document.getElementById('mainContent').style.display='block';
+}
+
+function buscarProducto(){
+let input=document.getElementById('search').value.toLowerCase();
+let productos=document.getElementsByClassName('product');
+for(let i=0;i<productos.length;i++){
+let nombre=productos[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+productos[i].style.display=nombre.includes(input)?'':'none';
+}
+}
+
+function irInstagram(){
+window.open('https://www.instagram.com/liria.company?igsh=MXdncW1xaHplb2Zn&utm_source=qr','_blank');
+}
+</script>
+
+</body>
+</html>
